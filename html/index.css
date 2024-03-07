@@ -1,0 +1,36 @@
+body {
+	position: relative;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+#bretho {
+    display: none;
+    position: fixed;
+	width: 375px;
+	height: 795px;
+	right: -2%;
+	bottom: -15%;
+}
+
+.screeninfo {
+    display: none;
+    position: absolute;
+    top: 17.2%;
+    left: 24%;
+    color: black;
+	font-weight: bold;
+    font-size: 55px;
+}
+
+#powerOn {
+	position: absolute;
+	width: 5.9vh;
+	height: 5.9vh;
+	bottom: 31.0vh;
+	right: 16.6vh;
+	border-radius: 5px;
+	transition: all 0.1s linear;
+	border-radius: 50%;
+	background-color: transparent;
+}
