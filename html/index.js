@@ -30,10 +30,7 @@ $(function() {
         if (data.key == "Escape") { // Escape key
             $.post(`https://${resource}/escape`, JSON.stringify({}));
         }
-    };
-
-    document.onkeyup = function (data) {
-        if (data.key == "E") { // E key
+        else if (data.key == "E") { // E key
             if (brethoOn == true) {
                 $.post(`https://${resource}/breth`, JSON.stringify({}));
             }
