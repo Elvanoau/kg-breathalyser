@@ -15,12 +15,13 @@ QBCore.Functions.CreateCallback('kg-breathalyser:server:GetAlcho', function(sour
     if alcho[closestPlayer] ~= nil then
         cb(alcho[closestPlayer])
     else
-        cb("000")
+        cb(0.000)
     end
 end)
 
 QBCore.Functions.CreateUseableItem(Config.Breathalyseritem, function(source, item)
     local src = source
+    if not QBCore.Functions.HasItem(item) then return end
     TriggerClientEvent('kg-breathalyser:client:breathalyse', src)
 end)
 
@@ -28,10 +29,10 @@ Citizen.CreateThread(function()     -- This Thread Ticks BAC
     while true do
         local sleep = 60000
         for i = 1, #alcho do
-            if alcho[i] > 0 then
-                alcho[i] = (alcho[i] - 5)
+            if alcho[i] > 0.000 then
+                alcho[i] = (alcho[i] - 0.005)
             else
-                alcho[i] = 0
+                alcho[i] = 0.000
             end
         end
         Wait(sleep)
